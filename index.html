@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html lang="uk">
+<link rel="stylesheet" href="style.css">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Мотопаства UA</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мотопаства UA</title>
+    <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      background: black;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #1c1c1c;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-    }
-
-    .fire-bg {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') center center / cover no-repeat;
-      opacity: 0.2;
-      z-index: -1;
+      min-height: 100vh;
+      padding: 2rem;
     }
 
     .logo {
-      width: 300px;
-      max-width: 80%;
-      margin-bottom: 20px;
-      animation: flicker 2s infinite alternate;
+      max-width: 320px;
+      margin-bottom: 2rem;
+      border-radius: 12px;
     }
 
     h1 {
+      font-size: 2.5rem;
       color: orange;
-      text-align: center;
-      font-size: 2.2em;
-      text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px orange;
-      animation: flicker 1.5s infinite alternate;
+      margin-bottom: 1.5rem;
     }
 
-    @keyframes flicker {
-      from {
-        opacity: 0.85;
-        filter: drop-shadow(0 0 5px orange) drop-shadow(0 0 10px red);
-      }
-      to {
-        opacity: 1;
-        filter: drop-shadow(0 0 15px orange) drop-shadow(0 0 30px red);
-      }
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background: orange;
+      border: none;
+      color: black;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ffcc80;
     }
   </style>
 </head>
 <body>
-  <div class="fire-bg"></div>
-
-  <img src="logo.jpg" alt="Motopastva Logo" class="logo" />
-  <h1>🔥 Мотопаства UA онлайн 🔥</h1>
-
+  <img src="IMG_9058.jpg" alt="Логотип Мотопастви" class="logo" />
+  <h1>Мотопаства UA</h1>
+  <button class="btn">Приєднатись до нас</button>
 </body>
 </html>
