@@ -1,46 +1,38 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body { 
-    background: url('fotobackground/fonlogobest.jpg') no-repeat center center fixed;
-    background-size: cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #111;
     font-family: 'Segoe UI', sans-serif;
     color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    height: 3cm;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* прозорий чорний */
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  
+  main {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 2rem;
-}
-
-.logo {
-  max-width: 320px;
-  margin-bottom: 2rem;
-  border-radius: 12px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: orange;
-  margin-bottom: 1.5rem;
-}
-
-.btn {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  background: orange;
-  border: none;
-  color: black;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background: #ffcc80;
-}
+    padding: 2rem 3cm; /* відступи зліва і справа */
+  }
+  
+  .main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
