@@ -13,33 +13,22 @@
     flex-direction: column;
   }
   
+  /* ХЕДЕР */
   header {
     height: 3cm;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* прозорий чорний */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
-    padding: 0 2rem;
-  }
-  
-  main {
-    flex: 1;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 2rem 3cm; /* відступи зліва і справа */
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
   
-  .main-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  }
   .menu {
     display: flex;
     gap: 1.5rem;
-    margin: 0 auto;
   }
   
   .nav-btn {
@@ -56,4 +45,20 @@
   .nav-btn:hover {
     background-color: orange;
     color: #111;
+  }
+  
+  /* ГОЛОВНИЙ БЛОК */
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3cm; /* Відступи зліва/справа */
+  }
+  
+  .main-image {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   }
