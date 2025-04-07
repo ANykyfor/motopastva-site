@@ -134,3 +134,50 @@
       max-width: 90%;
     }
   }
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .auth-form__input {
+    width: 90%;
+    max-width: 300px;
+    height: 45px;
+    padding: 0 1rem;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #111;
+    color: #ddd;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .auth-form__input:focus {
+    border-color: silver;
+    box-shadow: 0 0 10px rgba(192, 192, 192, 0.4);
+  }
+  
+  .auth-form__submit {
+    margin-top: 1rem;
+    width: 90%;
+    max-width: 300px;
+  }
+  
+  .auth-form__back-button {
+    margin-top: 1rem;
+    background: none;
+    border: none;
+    color: silver;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .auth-form__back-button:hover {
+    color: white;
+  }

@@ -1,0 +1,29 @@
+<form class="auth-form">
+    <input
+      type="text"
+      class="auth-form__input"
+      placeholder="Ім'я користувача"
+    />
+    <input
+      type="email"
+      class="auth-form__input"
+      placeholder="Email"
+    />
+    <input
+      type="password"
+      class="auth-form__input"
+      placeholder="Пароль"
+    />
+  
+    <button class="auth-form__submit auth-screen__button auth-screen__button--glow">
+      Зареєструватися
+    </button>
+  
+    <button
+      type="button"
+      class="auth-form__back-button"
+      onclick="document.getElementById('auth-form').innerHTML = ''; document.getElementById('auth-buttons').style.display = 'flex';"
+    >
+      ← Назад
+    </button>
+  </form>
