@@ -44,3 +44,29 @@ h1 {
 .btn:hover {
   background: #ffcc80;
 }
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  header {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .nav-btn {
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .main-image {
+    max-width: 100%;
+  }
+}
