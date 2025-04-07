@@ -11,30 +11,30 @@ html, body {
   }
   
   .logo-block {
-    position: relative;
+    text-align: center;
+    padding: 20px;  /* додав відступи, щоб елементи не прилипали до країв */
   }
   
   .main-image {
-    width: 600px;
-    max-width: 90vw;
-    border-radius: 20px;
+    width: 100%;
+    max-width: 1000px;  /* обмежує максимальний розмір */
+    border-radius: 12px;
     display: block;
+    margin: 0 auto;
   }
   
   .auth-buttons {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: -100px; /* піднімає кнопки ближче до зображення */
     display: flex;
-    gap: 1rem;
-    margin-top: -40px;
     justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* щоб кнопки були по вертикалі на маленьких екранах */
   }
   
+  /* Кнопки */
   .glow-on-hover {
-    width: 200px;
-    height: 45px;
+    width: 150px;
+    height: 40px;
     border: none;
     outline: none;
     color: #fff;
@@ -43,8 +43,6 @@ html, body {
     position: relative;
     z-index: 0;
     border-radius: 10px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.95rem;
   }
   
   .glow-on-hover:before {
@@ -92,4 +90,26 @@ html, body {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
+  }
+  
+  /* Адаптивний дизайн для мобільних */
+  @media (max-width: 768px) {
+    .logo-block {
+      padding: 15px;
+    }
+  
+    .main-image {
+      width: 90%; /* Зменшує зображення на мобільних */
+      max-width: 400px;
+    }
+  
+    .auth-buttons {
+      flex-direction: column;  /* Кнопки будуть йти одна під одною */
+      margin-top: 20px;
+    }
+  
+    .glow-on-hover {
+      width: 100%;  /* Кнопки займуть всю ширину на маленьких екранах */
+      max-width: 300px; /* обмежує максимальний розмір */
+    }
   }
