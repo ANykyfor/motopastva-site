@@ -1,16 +1,23 @@
-<form class="auth-form">
+<form class="auth-form" onsubmit="return handleLogin(event)">
     <input
       type="text"
       class="auth-form__input"
-      placeholder="Ім'я користувача або Email"
+      id="login-user"
+      placeholder="Ім'я або Email"
+      required
     />
     <input
       type="password"
       class="auth-form__input"
+      id="login-pass"
       placeholder="Пароль"
+      required
     />
   
-    <button class="auth-form__submit auth-screen__button auth-screen__button--glow">
+    <button
+      type="submit"
+      class="auth-form__submit auth-screen__button auth-screen__button--glow"
+    >
       Увійти
     </button>
   

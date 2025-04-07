@@ -11,29 +11,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <script>
-    function handleRegister(event) {
-      event.preventDefault();
-  
-      const username = document.getElementById('username').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value;
-  
-      if (!username || !email || !password) {
-        alert('Будь ласка, заповніть всі поля');
-        return false;
-      }
-  
-      // Збереження //
-      localStorage.setItem('motopastva-user', JSON.stringify({ username, email, password }));
-  
-      alert('Реєстрація успішна!');
-      document.getElementById('auth-form').innerHTML = '';
-      document.getElementById('auth-buttons').style.display = 'flex';
-  
-      return false;
-    }
-  </script>
+
   <body>
     <main class="main">
       <section class="auth-screen">
@@ -66,10 +44,11 @@
             </button>
           </div>
 
-          <!-- Для підгрузки форми -->
           <div id="auth-form"></div>
         </div>
       </section>
     </main>
+
+    <script src="js/scripts.js"></script>
   </body>
 </html>

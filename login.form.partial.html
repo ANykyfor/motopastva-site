@@ -1,8 +1,9 @@
 <section class="login-form">
   <h2 class="login-form__title">Вхід до системи</h2>
-  <form class="login-form__form">
+  <form class="login-form__form" onsubmit="return handleLogin(event)">
     <input
       type="email"
+      id="login-user"
       name="email"
       placeholder="Email"
       required
@@ -10,6 +11,7 @@
     />
     <input
       type="password"
+      id="login-pass"
       name="password"
       placeholder="Пароль"
       required

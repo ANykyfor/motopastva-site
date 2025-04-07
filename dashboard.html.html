@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motopastva | Кабінет</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background: #000;
+        color: #c0c0c0;
+        font-family: "Orbitron", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .welcome {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+
+      .logout-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        background: #111;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .logout-btn:hover {
+        background: #333;
+        color: #ff5050;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="welcome">Вітаємо, <span id="username-display">гість</span>!</h1>
+    <button class="logout-btn" onclick="handleLogout()">Вийти</button>
+
+    <script>
+      const user = JSON.parse(localStorage.getItem("motopastva-user"));
+      if (user && user.username) {
+        document.getElementById("username-display").textContent = user.username;
+      }
+
+      function handleLogout() {
+        localStorage.removeItem("motopastva-user");
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
