@@ -1,31 +1,22 @@
-<form class="auth-form" onsubmit="return handleLogin(event)">
-    <input
-      type="text"
-      class="auth-form__input"
-      id="login-user"
-      placeholder="Ім'я або Email"
-      required
-    />
-    <input
-      type="password"
-      class="auth-form__input"
-      id="login-pass"
-      placeholder="Пароль"
-      required
-    />
-  
-    <button
-      type="submit"
-      class="auth-form__submit auth-screen__button auth-screen__button--glow"
-    >
-      Увійти
-    </button>
-  
-    <button
-      type="button"
-      class="auth-form__back-button"
-      onclick="document.getElementById('auth-form').innerHTML = ''; document.getElementById('auth-buttons').style.display = 'flex';"
-    >
-      ← Назад
-    </button>
-  </form>
+<section class="login-form">
+    <h2 class="login-form__title">Вхід до системи</h2>
+    <form class="login-form__form" onsubmit="return handleLogin(event)">
+      <input
+        type="email"
+        id="login-user"
+        name="email"
+        placeholder="Email"
+        required
+        class="login-form__input"
+      />
+      <input
+        type="password"
+        id="login-pass"
+        name="password"
+        placeholder="Пароль"
+        required
+        class="login-form__input"
+      />
+      <button type="submit" class="login-form__button">Увійти</button>
+    </form>
+  </section>

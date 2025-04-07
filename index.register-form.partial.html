@@ -1,38 +1,45 @@
-<form class="auth-form" onsubmit="return handleRegister(event)">
-    <input
-      type="text"
-      class="auth-form__input"
-      id="username"
-      placeholder="Ім'я користувача"
-      required
-    />
-    <input
-      type="email"
-      class="auth-form__input"
-      id="email"
-      placeholder="Email"
-      required
-    />
-    <input
-      type="password"
-      class="auth-form__input"
-      id="password"
-      placeholder="Пароль"
-      required
-    />
+<section class="auth-form">
+    <h2 class="auth-form__title">Реєстрація</h2>
+    <form class="auth-form__form" onsubmit="return handleRegister(event)">
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Ім'я користувача"
+        required
+        class="auth-form__input"
+      />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email"
+        required
+        class="auth-form__input"
+      />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Пароль"
+        required
+        class="auth-form__input"
+      />
   
-    <button
-      type="submit"
-      class="auth-form__submit auth-screen__button auth-screen__button--glow"
-    >
-      Зареєструватися
-    </button>
+      <button
+        type="submit"
+        class="auth-form__submit auth-screen__button auth-screen__button--glow"
+      >
+        Зареєструватися
+      </button>
   
-    <button
-      type="button"
-      class="auth-form__back-button"
-      onclick="document.getElementById('auth-form').innerHTML = ''; document.getElementById('auth-buttons').style.display = 'flex';"
-    >
-      ← Назад
-    </button>
-  </form>
+      <button
+        type="button"
+        class="auth-form__back-button"
+        onclick="document.getElementById('auth-form').innerHTML = ''; document.getElementById('auth-buttons').style.display = 'flex';"
+      >
+        ← Назад
+      </button>
+    </form>
+  </section>
+  
