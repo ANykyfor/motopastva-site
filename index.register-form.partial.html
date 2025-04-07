@@ -1,21 +1,30 @@
-<form class="auth-form">
+<form class="auth-form" onsubmit="return handleRegister(event)">
     <input
       type="text"
       class="auth-form__input"
+      id="username"
       placeholder="Ім'я користувача"
+      required
     />
     <input
       type="email"
       class="auth-form__input"
+      id="email"
       placeholder="Email"
+      required
     />
     <input
       type="password"
       class="auth-form__input"
+      id="password"
       placeholder="Пароль"
+      required
     />
   
-    <button class="auth-form__submit auth-screen__button auth-screen__button--glow">
+    <button
+      type="submit"
+      class="auth-form__submit auth-screen__button auth-screen__button--glow"
+    >
       Зареєструватися
     </button>
   

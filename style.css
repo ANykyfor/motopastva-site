@@ -181,3 +181,51 @@
   .auth-form__back-button:hover {
     color: white;
   }
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  .auth-form__input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    background: #1c1c1c;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .auth-form__input::placeholder {
+    color: #aaa;
+    font-weight: 300;
+  }
+  
+  .auth-form__input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(192, 192, 192, 0.4);
+    background: #222;
+  }
+  
+  /* Стиль для кнопки "Назад" */
+  .auth-form__back-button {
+    background: transparent;
+    border: none;
+    color: silver;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .auth-form__back-button:hover {
+    color: #fff;
+    text-shadow: 0 0 8px silver;
+  }
