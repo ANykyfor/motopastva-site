@@ -44,7 +44,7 @@
   }
   
   .auth-screen__button {
-    width: 100%;
+    width: 200px;
   max-width: 300px;
   height: 50px;
   border: none;
