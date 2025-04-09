@@ -89,3 +89,5 @@ if (
 ) {
   window.addEventListener("DOMContentLoaded", loadUserProfile);
 }
+window.handleRegister = handleRegister;
+window.handleLogin = handleLogin;
