@@ -26,7 +26,7 @@
           <div id="auth-buttons" class="auth-screen__buttons">
             <button
               class="auth-screen__button auth-screen__button--glow"
-              hx-get="index.login-form.partial.html"
+              hx-get="html/index.login-form.partial.html"
               hx-target="#auth-form"
               hx-swap="innerHTML"
               hx-on="click: document.getElementById('auth-buttons').style.display = 'none'"
@@ -35,7 +35,7 @@
             </button>
             <button
               class="auth-screen__button auth-screen__button--glow"
-              hx-get="index.register-form.partial.html"
+              hx-get="html/index.register-form.partial.html"
               hx-target="#auth-form"
               hx-swap="innerHTML"
               hx-on="click: document.getElementById('auth-buttons').style.display = 'none'"
