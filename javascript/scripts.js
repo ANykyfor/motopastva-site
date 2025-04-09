@@ -6,21 +6,15 @@ function handleRegister(event) {
   const password = document.getElementById("password").value;
 
   if (!username || !email || !password) {
-    alert("Будь ласка, заповніть всі поля");
+    alert("Будь ласка, заповніть усі поля.");
     return false;
   }
 
-  const userData = {
-    username,
-    email,
-    password,
-  };
-
-  localStorage.setItem("motopastva-user", JSON.stringify(userData));
+  const user = { username, email, password };
+  localStorage.setItem("motopastva-user", JSON.stringify(user));
 
   alert("Реєстрація успішна!");
-  document.getElementById("auth-form").innerHTML = "";
-  document.getElementById("auth-buttons").style.display = "flex";
+  window.location.href = "html/profile.html";
 
   return false;
 }
@@ -28,20 +22,41 @@ function handleRegister(event) {
 function handleLogin(event) {
   event.preventDefault();
 
-  const loginUser = document.getElementById("login-user").value.trim();
-  const loginPass = document.getElementById("login-pass").value;
+  const emailOrName = document.getElementById("login-user").value.trim();
+  const password = document.getElementById("login-pass").value;
 
-  const saved = JSON.parse(localStorage.getItem("motopastva-user"));
+  const savedUser = JSON.parse(localStorage.getItem("motopastva-user"));
 
   if (
-    saved &&
-    (saved.username === loginUser || saved.email === loginUser) &&
-    saved.password === loginPass
+    savedUser &&
+    (savedUser.username === emailOrName || savedUser.email === emailOrName) &&
+    savedUser.password === password
   ) {
-    window.location.href = "html/dashboard.html";
+    window.location.href = "html/profile.html";
   } else {
-    alert("Невірні дані. Спробуйте ще раз.");
+    alert("Невірні дані для входу.");
   }
 
   return false;
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const nameField = document.getElementById("profile-name");
+  const emailField = document.getElementById("profile-email");
+
+  if (nameField && emailField) {
+    const user = JSON.parse(localStorage.getItem("motopastva-user"));
+    if (!user) {
+      window.location.href = "../index.html";
+      return;
+    }
+
+    nameField.textContent = user.username;
+    emailField.textContent = user.email;
+  }
+});
+
+function handleLogout() {
+  localStorage.removeItem("motopastva-user");
+  window.location.href = "../index.html";
 }

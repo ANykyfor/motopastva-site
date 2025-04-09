@@ -3,79 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Профіль | Motopastva</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      body {
-        background: #000;
-        color: #c0c0c0;
-        font-family: "Orbitron", sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 2rem;
-        text-align: center;
-      }
-
-      .profile__avatar {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        background: url("img/auth/logohead1.jpg") center/cover no-repeat;
-        margin-bottom: 1.5rem;
-        border: 3px solid #555;
-      }
-
-      .profile__info {
-        margin-bottom: 2rem;
-        font-size: 1.1rem;
-      }
-
-      .profile__info span {
-        color: #fff;
-      }
-
-      .profile__edit-btn {
-        padding: 12px 24px;
-        font-size: 16px;
-        background: #111;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      .profile__edit-btn:hover {
-        background: #333;
-        color: #00ffd5;
-      }
-    </style>
+    <title>Профіль | Motopastva UA</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <div class="profile__avatar"></div>
+    <main class="main">
+      <section class="profile">
+        <h1 class="form-title"> Профіль</h1>
+        <p><strong>Ім’я:</strong> <span id="profile-name"></span></p>
+        <p><strong>Email:</strong> <span id="profile-email"></span></p>
 
-    <div class="profile__info">
-      <p>Ім'я: <span id="profile-username">Завантаження...</span></p>
-      <p>Email: <span id="profile-email">Завантаження...</span></p>
-    </div>
+        <div class="auth-screen__buttons">
+          <button class="auth-screen__button">Редагувати</button>
+          <button class="auth-screen__button" onclick="handleLogout()">Вийти</button>
+        </div>
+      </section>
+    </main>
 
-    <button class="profile__edit-btn" onclick="alert('Редагування в розробці')">
-      Редагувати
-    </button>
-
-    <script>
-      const user = JSON.parse(localStorage.getItem("motopastva-user"));
-
-      if (user) {
-        document.getElementById("profile-username").textContent = user.username;
-        document.getElementById("profile-email").textContent = user.email;
-      } else {
-        document.body.innerHTML =
-          "<h2>Користувач не знайдений. Увійдіть спочатку.</h2>";
-      }
-    </script>
+    <script src="../javascript/scripts.js"></script>
   </body>
 </html>
