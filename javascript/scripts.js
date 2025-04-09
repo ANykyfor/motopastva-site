@@ -1,3 +1,5 @@
+const API_BASE = "https://9ecf-93-170-117-27.ngrok-free.app";
+
 async function handleRegister(event) {
   event.preventDefault();
 
@@ -11,7 +13,7 @@ async function handleRegister(event) {
   }
 
   try {
-    const res = await fetch("http://localhost:3000/register", {
+    const res = await fetch(`${API_BASE}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +42,7 @@ async function handleLogin(event) {
   const password = document.getElementById("login-pass").value;
 
   try {
-    const res = await fetch("http://localhost:3000/login", {
+    const res = await fetch(`${API_BASE}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
