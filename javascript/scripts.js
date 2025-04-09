@@ -10,12 +10,18 @@ function handleRegister(event) {
     return false;
   }
 
-  localStorage.setItem(
-    "motopastva-user",
-    JSON.stringify({ username, email, password })
-  );
+  const userData = {
+    username,
+    email,
+    password,
+  };
 
-  window.location.href = "main.html";
+  localStorage.setItem("motopastva-user", JSON.stringify(userData));
+
+  alert("Реєстрація успішна!");
+  document.getElementById("auth-form").innerHTML = "";
+  document.getElementById("auth-buttons").style.display = "flex";
+
   return false;
 }
 
@@ -32,9 +38,9 @@ function handleLogin(event) {
     (saved.username === loginUser || saved.email === loginUser) &&
     saved.password === loginPass
   ) {
-    window.location.href = "main.html";
+    window.location.href = "html/dashboard.html";
   } else {
-    alert("Невірні дані");
+    alert("Невірні дані. Спробуйте ще раз.");
   }
 
   return false;

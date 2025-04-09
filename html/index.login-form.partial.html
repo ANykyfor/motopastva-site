@@ -1,0 +1,34 @@
+<section class="login-form">
+  <h2 class="form-title">Вхід до системи</h2>
+  <form class="auth-form" onsubmit="return handleLogin(event)">
+    <input
+      type="text"
+      id="login-user"
+      name="login-user"
+      placeholder="Email або Ім'я користувача"
+      class="auth-form__input"
+      required
+    />
+    <input
+      type="password"
+      id="login-pass"
+      name="login-pass"
+      placeholder="Пароль"
+      class="auth-form__input"
+      required
+    />
+    <button
+      type="submit"
+      class="auth-form__submit auth-screen__button auth-screen__button--glow"
+    >
+      Увійти
+    </button>
+    <button
+      type="button"
+      class="auth-form__back-button"
+      onclick="document.getElementById('auth-form').innerHTML = ''; document.getElementById('auth-buttons').style.display = 'flex';"
+    >
+      Назад
+    </button>
+  </form>
+</section>
