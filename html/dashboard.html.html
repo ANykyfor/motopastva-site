@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Motopastva | Кабінет</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Профіль користувача | Motopastva UA</title>
+    <link rel="stylesheet" href="../css/style.css" />
     <style>
       body {
         background: #000;
-        color: #c0c0c0;
+        color: silver;
         font-family: "Orbitron", sans-serif;
         display: flex;
         flex-direction: column;
@@ -18,38 +18,48 @@
         text-align: center;
         padding: 2rem;
       }
-      .welcome {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
+
+      .profile-box {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(192, 192, 192, 0.2);
+        max-width: 400px;
+        width: 100%;
       }
-      .logout-btn {
-        padding: 12px 24px;
-        font-size: 16px;
+
+      .profile-box h1 {
+        margin-bottom: 1rem;
+      }
+
+      .logout-button {
+        margin-top: 2rem;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        font-weight: bold;
         background: #111;
-        color: #fff;
+        color: silver;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
-        transition: 0.3s;
+        transition: all 0.3s ease-in-out;
       }
-      .logout-btn:hover {
-        background: #333;
-        color: #ff5050;
+
+      .logout-button:hover {
+        background: #222;
+        color: white;
+        box-shadow: 0 0 10px silver;
       }
     </style>
   </head>
+
   <body>
-    <h1 class="welcome">Вітаємо, <span id="username-display">гість</span>!</h1>
-    <button class="logout-btn" onclick="handleLogout()">Вийти</button>
-    <script>
-      const user = JSON.parse(localStorage.getItem("motopastva-user"));
-      if (user && user.username) {
-        document.getElementById("username-display").textContent = user.username;
-      }
-      function handleLogout() {
-        localStorage.removeItem("motopastva-user");
-        window.location.href = "index.html";
-      }
-    </script>
+    <div class="profile-box">
+      <h1>Привіт, <span id="profile-name">...</span>!</h1>
+      <p>Email: <span id="profile-email">...</span></p>
+      <button class="logout-button" onclick="logout()">Вийти</button>
+    </div>
+
+    <script src="../javascript/scripts.js"></script>
   </body>
 </html>

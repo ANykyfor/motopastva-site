@@ -14,8 +14,7 @@ function handleRegister(event) {
   localStorage.setItem("motopastva-user", JSON.stringify(user));
 
   alert("Реєстрація успішна!");
-  window.location.href = "html/profile.html";
-
+  window.location.href = "html/dashboard.html";
   return false;
 }
 
@@ -32,7 +31,7 @@ function handleLogin(event) {
     (savedUser.username === emailOrName || savedUser.email === emailOrName) &&
     savedUser.password === password
   ) {
-    window.location.href = "html/profile.html";
+    window.location.href = "html/dashboard.html";
   } else {
     alert("Невірні дані для входу.");
   }
@@ -40,23 +39,28 @@ function handleLogin(event) {
   return false;
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const nameField = document.getElementById("profile-name");
-  const emailField = document.getElementById("profile-email");
-
-  if (nameField && emailField) {
-    const user = JSON.parse(localStorage.getItem("motopastva-user"));
-    if (!user) {
-      window.location.href = "../index.html";
-      return;
-    }
-
-    nameField.textContent = user.username;
-    emailField.textContent = user.email;
+function loadUserProfile() {
+  const user = JSON.parse(localStorage.getItem("motopastva-user"));
+  if (!user) {
+    window.location.href = "../index.html";
+    return;
   }
-});
 
-function handleLogout() {
+  const nameEl = document.getElementById("profile-name");
+  const emailEl = document.getElementById("profile-email");
+
+  if (nameEl) nameEl.textContent = user.username;
+  if (emailEl) emailEl.textContent = user.email;
+}
+
+function logout() {
   localStorage.removeItem("motopastva-user");
   window.location.href = "../index.html";
+}
+
+if (
+  window.location.pathname.includes("dashboard.html") ||
+  window.location.pathname.includes("profile.html")
+) {
+  window.addEventListener("DOMContentLoaded", loadUserProfile);
 }
