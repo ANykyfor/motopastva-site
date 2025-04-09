@@ -1,7 +1,7 @@
-const API_BASE = " https://42c4-93-170-117-27.ngrok-free.app";
+const API_BASE = "https://9ecf-93-170-117-27.ngrok-free.app";
 
 async function handleRegister(event) {
-  console.log("handleRegister викликано"); 
+  console.log("handleRegister викликано");
   event.preventDefault();
 
   const username = document.getElementById("username").value.trim();
@@ -18,9 +18,9 @@ async function handleRegister(event) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "ngrok-skip-browser-warning": "true",
+        "ngrok-skip-browser-warning": "true"
       },
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ username, email, password })
     });
 
     if (res.status === 201) {
@@ -48,14 +48,13 @@ async function handleLogin(event) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "ngrok-skip-browser-warning": "true",
+        "ngrok-skip-browser-warning": "true"
       },
-      body: JSON.stringify({ emailOrUsername, password }),
+      body: JSON.stringify({ emailOrUsername, password })
     });
 
     if (res.ok) {
       const data = await res.json();
-
       localStorage.setItem("motopastva-user", JSON.stringify(data));
       window.location.href = "html/dashboard.html";
     } else {
@@ -99,11 +98,11 @@ if (
 document.body.addEventListener("htmx:afterSwap", (event) => {
   if (event.target.id === "auth-form") {
     setTimeout(() => {
-      const form = document.querySelector(".auth-form");
-      console.log("🧪 [HTMX] Вставлена форма:", form); 
+      const form = document.querySelector("#auth-form form");
+      console.log("форма вставлена", form);
       if (form) {
         form.addEventListener("submit", handleRegister);
       }
-    }, 100); 
+    }, 200);
   }
 });
