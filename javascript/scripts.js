@@ -1,4 +1,4 @@
-const API_BASE = "https://9ecf-93-170-117-27.ngrok-free.app";
+const API_BASE = " https://42c4-93-170-117-27.ngrok-free.app";
 
 async function handleRegister(event) {
   console.log("handleRegister викликано"); 
