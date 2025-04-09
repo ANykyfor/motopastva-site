@@ -1,4 +1,4 @@
-function handleRegister(event) {
+async function handleRegister(event) {
   event.preventDefault();
 
   const username = document.getElementById("username").value.trim();
@@ -7,36 +7,59 @@ function handleRegister(event) {
 
   if (!username || !email || !password) {
     alert("Будь ласка, заповніть усі поля.");
-    return false;
+    return;
   }
 
-  const user = { username, email, password };
-  localStorage.setItem("motopastva-user", JSON.stringify(user));
+  try {
+    const res = await fetch("http://localhost:3000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, email, password }),
+    });
 
-  alert("Реєстрація успішна!");
-  window.location.href = "html/dashboard.html";
-  return false;
+    if (res.status === 201) {
+      alert("Реєстрація успішна!");
+      window.location.href = "html/dashboard.html";
+    } else if (res.status === 409) {
+      alert("Користувач з таким email вже існує.");
+    } else {
+      alert("Сталася помилка при реєстрації.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Помилка з'єднання з сервером.");
+  }
 }
 
-function handleLogin(event) {
+async function handleLogin(event) {
   event.preventDefault();
 
-  const emailOrName = document.getElementById("login-user").value.trim();
+  const emailOrUsername = document.getElementById("login-user").value.trim();
   const password = document.getElementById("login-pass").value;
 
-  const savedUser = JSON.parse(localStorage.getItem("motopastva-user"));
+  try {
+    const res = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ emailOrUsername, password }),
+    });
 
-  if (
-    savedUser &&
-    (savedUser.username === emailOrName || savedUser.email === emailOrName) &&
-    savedUser.password === password
-  ) {
-    window.location.href = "html/dashboard.html";
-  } else {
-    alert("Невірні дані для входу.");
+    if (res.ok) {
+      const data = await res.json();
+
+      localStorage.setItem("motopastva-user", JSON.stringify(data));
+      window.location.href = "html/dashboard.html";
+    } else {
+      alert("Невірні дані для входу.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Помилка з'єднання з сервером.");
   }
-
-  return false;
 }
 
 function loadUserProfile() {
