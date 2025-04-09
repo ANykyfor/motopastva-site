@@ -1,6 +1,7 @@
 const API_BASE = "https://9ecf-93-170-117-27.ngrok-free.app";
 
 async function handleRegister(event) {
+  console.log("handleRegister викликано"); 
   event.preventDefault();
 
   const username = document.getElementById("username").value.trim();
@@ -97,9 +98,12 @@ if (
 
 document.body.addEventListener("htmx:afterSwap", (event) => {
   if (event.target.id === "auth-form") {
-    const form = document.querySelector(".auth-form");
-    if (form) {
-      form.addEventListener("submit", handleRegister);
-    }
+    setTimeout(() => {
+      const form = document.querySelector(".auth-form");
+      console.log("🧪 [HTMX] Вставлена форма:", form); 
+      if (form) {
+        form.addEventListener("submit", handleRegister);
+      }
+    }, 100); 
   }
 });
