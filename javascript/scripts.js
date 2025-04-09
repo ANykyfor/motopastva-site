@@ -17,6 +17,7 @@ async function handleRegister(event) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": "true",
       },
       body: JSON.stringify({ username, email, password }),
     });
@@ -46,6 +47,7 @@ async function handleLogin(event) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": "true",
       },
       body: JSON.stringify({ emailOrUsername, password }),
     });
@@ -83,11 +85,21 @@ function logout() {
   window.location.href = "../index.html";
 }
 
+window.handleRegister = handleRegister;
+window.handleLogin = handleLogin;
+
 if (
   window.location.pathname.includes("dashboard.html") ||
   window.location.pathname.includes("profile.html")
 ) {
   window.addEventListener("DOMContentLoaded", loadUserProfile);
 }
-window.handleRegister = handleRegister;
-window.handleLogin = handleLogin;
+
+document.body.addEventListener("htmx:afterSwap", (event) => {
+  if (event.target.id === "auth-form") {
+    const form = document.querySelector(".auth-form");
+    if (form) {
+      form.addEventListener("submit", handleRegister);
+    }
+  }
+});
