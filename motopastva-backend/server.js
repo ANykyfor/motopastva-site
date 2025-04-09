@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const app = express();
 const PORT = 3000;
@@ -25,8 +26,9 @@ app.post("/register", async (req, res) => {
     return res.status(409).json({ message: "Користувач уже існує" });
   }
 
-  const newUser = new User({ username, email, password });
-  await newUser.save();
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const user = new User({ username, email, password: hashedPassword });
+  await user.save();
 
   res.status(201).json({ message: "Реєстрація успішна" });
 });
@@ -38,7 +40,12 @@ app.post("/login", async (req, res) => {
     $or: [{ email: emailOrUsername }, { username: emailOrUsername }],
   });
 
-  if (!user || user.password !== password) {
+  if (!user) {
+    return res.status(401).json({ message: "Невірні дані" });
+  }
+
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
     return res.status(401).json({ message: "Невірні дані" });
   }
 
@@ -49,5 +56,5 @@ app.post("/login", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(` Сервер запущено на http://localhost:${PORT}`);
+  console.log(`http://localhost:${PORT}`);
 });
