@@ -55,6 +55,9 @@ app.post("/login", async (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send("Сервер успішно працює ");
+});
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
