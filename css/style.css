@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 html,
 body {
   margin: 0;
@@ -13,6 +13,7 @@ body {
   background-size: cover;
   position: relative;
   z-index: 0;
+  color: #c0c0c0;
 }
 
 .main {
@@ -21,7 +22,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 .top-left-logo {
@@ -32,6 +34,14 @@ body {
   z-index: 10;
 }
 
+.form-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+
 .auth-screen__image {
   width: 100%;
   max-width: 500px;
@@ -39,7 +49,6 @@ body {
   margin: 0 auto;
   object-fit: contain;
   border-radius: 12px;
-  border: none;
 }
 
 @media (max-width: 768px) {
@@ -47,6 +56,7 @@ body {
     max-width: 90%;
   }
 }
+
 
 .auth-screen__buttons {
   display: flex;
@@ -60,19 +70,18 @@ body {
   width: 200px;
   height: 50px;
   border: none;
-  outline: none;
+  border-radius: 10px;
+  background: #111;
   color: #c0c0c0;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  background: #111;
   cursor: pointer;
   position: relative;
   z-index: 0;
-  border-radius: 10px;
-  transition: color 0.3s ease, background 0.3s ease;
   font-family: "Orbitron", sans-serif;
+  transition: color 0.3s, background 0.3s;
 }
 
 .auth-screen__button--glow::before {
@@ -96,11 +105,11 @@ body {
   height: 100%;
   background-size: 400%;
   z-index: -1;
-  filter: blur(3px);
-  animation: glowing 20s linear infinite;
+  filter: blur(4px);
+  border-radius: 10px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
+  animation: glowing 20s linear infinite;
 }
 
 .auth-screen__button--glow:hover::before {
@@ -111,10 +120,7 @@ body {
   content: "";
   background: #111;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: -1;
   border-radius: 10px;
 }
@@ -135,6 +141,7 @@ body {
   }
 }
 
+
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -154,7 +161,7 @@ body {
   color: #fff;
   font-size: 1rem;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-  transition: box-shadow 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .auth-form__input::placeholder {
@@ -187,13 +194,4 @@ body {
 .auth-form__back-button:hover {
   color: #fff;
   text-shadow: 0 0 8px silver;
-}
-
-.form-title {
-  color: silver;
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
 }

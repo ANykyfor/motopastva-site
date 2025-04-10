@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="uk">
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Вхід</title>
+    <title>Мотопаства | Вхід</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <main class="main">
       <section class="login-form">
-        <h2 class="form-title">Вхід</h2>
+        <h1 class="form-title">Вхід до Мотопастви</h1>
+
         <form class="auth-form" onsubmit="return handleLogin(event)">
           <input
             type="text"
             id="login-user"
-            name="login-user"
             placeholder="Ім’я користувача"
             class="auth-form__input"
             required
           />
-          <input
-            type="password"
-            id="login-pass"
-            name="login-pass"
-            placeholder="Пароль"
-            class="auth-form__input"
-            required
-          />
-          <button type="submit" class="auth-form__submit">Увійти</button>
+          <button type="submit" class="auth-form__submit">
+            Увійти
+          </button>
         </form>
       </section>
     </main>
+
     <script src="javascript/scripts.js"></script>
   </body>
 </html>
