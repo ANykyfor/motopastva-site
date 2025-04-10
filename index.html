@@ -3,60 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Мотопаства UA</title>
-
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
-    <meta
-      http-equiv="Referrer-Policy"
-      content="strict-origin-when-cross-origin"
-    />
-
+    <title>Вхід</title>
     <link rel="stylesheet" href="css/style.css" />
-
-    <script
-      src="https://unpkg.com/htmx.org@1.9.10"
-      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
-      crossorigin="anonymous"
-    ></script>
   </head>
-
   <body>
     <main class="main">
-      <section class="auth-screen">
-        <div class="auth-screen__logo-block">
-          <img
-            src="img/logo.jpg"
-            alt="Логотип Мотопаства"
-            class="auth-screen__image"
+      <section class="login-form">
+        <h2 class="form-title">Вхід</h2>
+        <form class="auth-form" onsubmit="return handleLogin(event)">
+          <input
+            type="text"
+            id="login-user"
+            name="login-user"
+            placeholder="Ім’я користувача"
+            class="auth-form__input"
+            required
           />
-
-          <div id="auth-buttons" class="auth-screen__buttons">
-            <button
-              class="auth-screen__button auth-screen__button--glow"
-              hx-get="html/index.login-form.partial.html"
-              hx-target="#auth-form"
-              hx-swap="innerHTML"
-              hx-on="click: document.getElementById('auth-buttons').style.display = 'none'"
-            >
-              Вхід
-            </button>
-            <button
-              class="auth-screen__button auth-screen__button--glow"
-              hx-get="html/index.register-form.partial.html"
-              hx-target="#auth-form"
-              hx-swap="innerHTML"
-              hx-on="click: document.getElementById('auth-buttons').style.display = 'none'"
-            >
-              Реєстрація
-            </button>
-          </div>
-
-          <div id="auth-form"></div>
-        </div>
+          <input
+            type="password"
+            id="login-pass"
+            name="login-pass"
+            placeholder="Пароль"
+            class="auth-form__input"
+            required
+          />
+          <button type="submit" class="auth-form__submit">Увійти</button>
+        </form>
       </section>
     </main>
-
     <script src="javascript/scripts.js"></script>
   </body>
 </html>
