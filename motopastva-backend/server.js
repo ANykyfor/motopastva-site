@@ -5,9 +5,9 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-mongoose.connect("mongodb://localhost:27017/motopastva");
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/motopastva");
 
 const User = mongoose.model("User", {
   username: String,
@@ -56,5 +56,5 @@ app.post("/login", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
