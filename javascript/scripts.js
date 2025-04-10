@@ -1,4 +1,4 @@
-const API_BASE = " https://14f7-93-170-117-52.ngrok-free.app";
+const API_BASE = "https://14f7-93-170-117-52.ngrok-free.app";
 
 async function handleRegister(event) {
   console.log("handleRegister викликано");
@@ -29,11 +29,11 @@ async function handleRegister(event) {
     } else if (res.status === 409) {
       alert("Користувач з таким email вже існує.");
     } else {
-      alert("Сталася помилка при реєстрації.");
+      alert("Сталася помилка при реєстрації. Код: " + res.status);
     }
   } catch (err) {
-    console.error(err);
-    alert("Помилка з'єднання з сервером.");
+    console.error("❌ Register error:", err);
+    alert("Помилка з'єднання з сервером:\n" + err.message);
   }
 }
 
@@ -58,11 +58,11 @@ async function handleLogin(event) {
       localStorage.setItem("motopastva-user", JSON.stringify(data));
       window.location.href = "html/dashboard.html";
     } else {
-      alert("Невірні дані для входу.");
+      alert("Невірні дані для входу. Код: " + res.status);
     }
   } catch (err) {
-    console.error(err);
-    alert("Помилка з'єднання з сервером.");
+    console.error("❌ Login error:", err);
+    alert("Помилка з'єднання з сервером:\n" + err.message);
   }
 }
 
