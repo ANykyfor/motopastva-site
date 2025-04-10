@@ -62,3 +62,6 @@ app.get("/", (req, res) => {
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
+app.get("/register", (req, res) => {
+  res.send("Цей маршрут підтримує тільки POST-запити");
+});
