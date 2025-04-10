@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="uk">
   <head>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Мотопаства | Вхід</title>
+    <title>Вхід | Motopastva UA</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
+    
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="img/road.mp4" type="video/mp4" />
+      Ваш браузер не підтримує відео.
+    </video>
+
     <main class="main">
+      <img src="img/logo.jpg" alt="Логотип" class="top-left-logo" />
+
       <section class="login-form">
         <h1 class="form-title">Вхід до Мотопастви</h1>
 
@@ -20,7 +28,7 @@
             class="auth-form__input"
             required
           />
-          <button type="submit" class="auth-form__submit">
+          <button type="submit" class="auth-form__submit auth-screen__button auth-screen__button--glow">
             Увійти
           </button>
         </form>
