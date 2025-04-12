@@ -43,8 +43,25 @@ function handleFeedback(event) {
     return;
   }
 
-  
-
   output.textContent = "Дякуємо за ваше повідомлення!";
   form.reset();
 }
+function openModal(imgElement) {
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  modal.style.display = "flex";
+  modalImg.src = imgElement.src;
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+<script>
+  const carousel = document.getElementById('membersCarousel');
+  document.querySelector('.members-gallery__arrow--left').addEventListener('click', () => {
+    carousel.scrollBy({ left: -260, behavior: 'smooth' });
+  });
+  document.querySelector('.members-gallery__arrow--right').addEventListener('click', () => {
+    carousel.scrollBy({ left: 260, behavior: 'smooth' });
+  });
+</script>

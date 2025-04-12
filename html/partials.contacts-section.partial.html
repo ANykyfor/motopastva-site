@@ -1,15 +1,15 @@
 <section class="contacts-section">
   <h2 class="contacts-section__title">Контакти</h2>
 
-  <div class="contacts-section__info">
-    <p class="contacts-section__item">
-      📍 <strong>Локація:</strong> Івано-Франківськ, вул.Київська 35
-    </p>
-    <p class="contacts-section__item">
-      📞 <strong>Телефон:</strong> <a href="tel:+380971234567" class="contacts-section__link">+38 (050)749 04 21</a>
-    </p>
-    <p class="contacts-section__item">
-      📧 <strong>Email:</strong> <a href="mailto:info@motopastva.ua" class="contacts-section__link">info@motopastva.ua</a>
-    </p>
+  <div class="contacts-widget-fixed">
+    <h3 class="contacts-widget-fixed__title">Контакти</h3>
+    <p class="contacts-widget__item">📞 <a class="contacts-widget__link" href="tel:+380507490421">+38 (050) 749 04 21</a></p>
+    <p class="contacts-widget__item">✉️ <a class="contacts-widget__link" href="mailto:info@motopastva.ua">info@motopastva.ua</a></p>
+    <p class="contacts-widget__item">📍 Івано-Франківськ, вул. Київська 35</p>
   </div>
 </section>
+<section
+  data-hx-trigger="load"
+  data-hx-get="../html/partials.contacts-widget.partial.html"
+  data-hx-swap="beforeend"
+></section>

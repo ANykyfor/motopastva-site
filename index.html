@@ -6,9 +6,14 @@
     <title>Motopastva UA</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body class="hero-background">
@@ -16,5 +21,11 @@
       <h1 class="main__title">Motopastva UA</h1>
       <a href="html/main.html" class="main__btn">Увійти</a>
     </main>
+
+    <div
+      data-hx-trigger="load"
+      data-hx-get="partials.feedback-section.partial.html"
+      data-hx-swap="afterend"
+    ></div>
   </body>
 </html>

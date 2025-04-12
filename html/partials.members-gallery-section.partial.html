@@ -1,0 +1,118 @@
+<section class="members-gallery">
+  <h2 class="members-gallery__title">Наші учасники</h2>
+  <div class="members-gallery__container">
+    <button
+      class="members-gallery__arrow members-gallery__arrow--left"
+      aria-label="Попередній"
+    >
+      &larr;
+    </button>
+
+    <div class="members-gallery__carousel" id="membersCarousel">
+      <img
+        src="../img/motomembers/1.jpeg"
+        alt="Учасник 1"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/2.jpeg"
+        alt="Учасник 2"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/3.jpeg"
+        alt="Учасник 3"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/4.jpeg"
+        alt="Учасник 4"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/5.jpeg"
+        alt="Учасник 5"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/6.jpeg"
+        alt="Учасник 6"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/7.jpeg"
+        alt="Учасник 7"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/8.jpeg"
+        alt="Учасник 8"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/9.jpeg"
+        alt="Учасник 9"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/10.jpeg"
+        alt="Учасник 10"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/11.jpeg"
+        alt="Учасник 11"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/12.jpeg"
+        alt="Учасник 12"
+        class="members-gallery__img"
+      />
+      <img
+        src="../img/motomembers/13.jpeg"
+        alt="Учасник 13"
+        class="members-gallery__img"
+      />
+    </div>
+
+    <button
+      class="members-gallery__arrow members-gallery__arrow--right"
+      aria-label="Наступний"
+    >
+      &rarr;
+    </button>
+  </div>
+</section>
+
+<div id="imageModal" class="image-modal">
+  <span class="image-modal__close" onclick="closeModal()">&times;</span>
+  <img class="image-modal__content" id="modalImage" />
+</div>
+
+<script>
+  const carousel = document.getElementById("membersCarousel");
+  document
+    .querySelector(".members-gallery__arrow--left")
+    .addEventListener("click", () => {
+      carousel.scrollBy({ left: -260, behavior: "smooth" });
+    });
+  document
+    .querySelector(".members-gallery__arrow--right")
+    .addEventListener("click", () => {
+      carousel.scrollBy({ left: 260, behavior: "smooth" });
+    });
+
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  document.querySelectorAll(".members-gallery__img").forEach((img) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+</script>
