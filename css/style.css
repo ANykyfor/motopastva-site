@@ -1,6 +1,39 @@
 * {
   box-sizing: border-box;
 }
+.main-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.main-header__title {
+  font-size: 36px;
+  color: #fff;
+  text-shadow: 0 0 6px #ff9900;
+}
+
+.main-content {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.welcome-section__title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.welcome-section__text {
+  font-size: 18px;
+  color: #fff;
+}
+
+.main-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
 
 body.hero-background {
   margin: 0;
@@ -17,9 +50,11 @@ body.hero-background {
 
 .main {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 40px;
   border-radius: 16px;
+  max-width: 90%;
+  width: 500px;
 }
 
 .main__title {
@@ -43,4 +78,38 @@ body.hero-background {
 .main__btn:hover {
   background-color: #ffcc00;
   color: #111;
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .main__title {
+    font-size: 28px;
+  }
+
+  .main__btn {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+}
+@media (max-width: 768px) {
+  .main-header__title {
+    font-size: 28px;
+  }
+
+  .welcome-section__title {
+    font-size: 22px;
+  }
+
+  .welcome-section__text {
+    font-size: 16px;
+  }
+
+  .main-footer {
+    font-size: 12px;
+    padding: 15px;
+  }
 }
