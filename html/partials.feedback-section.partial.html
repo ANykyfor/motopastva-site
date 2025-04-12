@@ -1,0 +1,27 @@
+<section class="feedback-section">
+  <h2 class="feedback-section__title">Зв'язатися з нами</h2>
+  <form class="feedback-section__form" onsubmit="handleFeedback(event)">
+    <input
+      type="text"
+      class="feedback-section__input"
+      name="name"
+      placeholder="Ваше ім’я"
+      required
+    />
+    <input
+      type="email"
+      class="feedback-section__input"
+      name="email"
+      placeholder="Email"
+      required
+    />
+    <textarea
+      class="feedback-section__textarea"
+      name="message"
+      placeholder="Ваше повідомлення"
+      required
+    ></textarea>
+    <button type="submit" class="feedback-section__submit">Надіслати</button>
+  </form>
+  <p id="feedback-success" class="feedback-section__success"></p>
+</section>

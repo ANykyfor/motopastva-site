@@ -4,25 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Motopastva UA — Головна</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="img/global-header/wine-logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+    <section
+      data-hx-trigger="load"
+      data-hx-get="../html/partials.feedback-section.partial.html"
+      data-hx-swap="outerHTML"
+    ></section>
+    <section
+      data-hx-trigger="load"
+      data-hx-get="../html/partials.map-section.partial.html"
+      data-hx-swap="outerHTML"
+    ></section>
+
+    <section
+      data-hx-trigger="load"
+      data-hx-get="../html/partials.video-section.partial.html"
+      data-hx-swap="outerHTML"
+    ></section>
+
+    <section
+      data-hx-trigger="load"
+      data-hx-get="../html/partials.reviews-section.partial.html"
+      data-hx-swap="outerHTML"
+    ></section>
   </head>
 
   <body>
     <header class="main-header">
-      <h1 class="main-title">Motopastva UA</h1>
-      <p class="main-subtitle">Наше братерство. Наша дорога. Наш стиль.</p>
+      <h1 class="main-header__title">Motopastva UA</h1>
+      <p class="main-header__subtitle">
+        Наше братерство. Наша дорога. Наш стиль.
+      </p>
     </header>
 
     <main class="main-content">
-      <section class="welcome-section">
-        <h2>Ласкаво просимо!</h2>
-        <p>Тут ви знайдете все: наші новини, фотографії, заходи та багато іншого!</p>
-      </section>
+      <section
+        data-hx-trigger="load"
+        data-hx-get="../html/partials.welcome-section.partial.html"
+        data-hx-swap="outerHTML"
+      ></section>
 
-      <section class="section-placeholder">
-        <!-- Тут будуть наступні секції: галерея, новини, карта тощо -->
-      </section>
+      <section
+        data-hx-trigger="load"
+        data-hx-get="../html/partials.gallery-section.partial.html"
+        data-hx-swap="outerHTML"
+      ></section>
+
+      <section
+        data-hx-trigger="load"
+        data-hx-get="../html/partials.news-section.partial.html"
+        data-hx-swap="outerHTML"
+      ></section>
+
+      <section
+        data-hx-trigger="load"
+        data-hx-get="../html/partials.contacts-section.partial.html"
+        data-hx-swap="outerHTML"
+      ></section>
     </main>
 
     <footer class="main-footer">

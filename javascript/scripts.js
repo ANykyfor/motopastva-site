@@ -30,3 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+function handleFeedback(event) {
+  event.preventDefault();
+  const form = event.target;
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+  const output = document.getElementById("feedback-success");
+
+  if (!name || !email || !message) {
+    output.textContent = "Будь ласка, заповніть всі поля.";
+    return;
+  }
+
+  
+
+  output.textContent = "Дякуємо за ваше повідомлення!";
+  form.reset();
+}
