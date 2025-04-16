@@ -73,19 +73,20 @@ function highlightCenterImage() {
 }
 
 carousel.addEventListener('scroll', () => {
-  setTimeout(highlightCenterImage, 100); // трішки затримка після прокрутки
+  setTimeout(highlightCenterImage, 100); 
 });
 <script>
-const leftArrow = document.querySelector('.members-gallery__arrow--left');
-const rightArrow = document.querySelector('.members-gallery__arrow--right');
+  const carousel = document.querySelector('.members-gallery__carousel');
+  const leftArrow = document.querySelector('.members-gallery__arrow--left');
+  const rightArrow = document.querySelector('.members-gallery__arrow--right');
 
-if (carousel && leftArrow && rightArrow) {
-  leftArrow.addEventListener('click', () => {
-    carousel.scrollBy({ left: -260, behavior: 'smooth' });
-  });
+  if (carousel && leftArrow && rightArrow) {
+    leftArrow.addEventListener('click', () => {
+      carousel.scrollBy({ left: -260, behavior: 'smooth' });
+    });
 
-  rightArrow.addEventListener('click', () => {
-    carousel.scrollBy({ left: 260, behavior: 'smooth' });
-  });
-}
+    rightArrow.addEventListener('click', () => {
+      carousel.scrollBy({ left: 260, behavior: 'smooth' });
+    });
+  }
 </script>

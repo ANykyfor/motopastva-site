@@ -37,3 +37,21 @@
     line-height: 1.6;
     max-width: 720px;
   }
+  @media (max-width: 768px) {
+    .history-section {
+      height: auto;
+      padding: 60px 20px;
+    }
+  
+    .history-section__video {
+      object-position: center top;
+    }
+  
+    .history-section__title {
+      font-size: 28px;
+    }
+  
+    .history-section__paragraph {
+      font-size: 16px;
+    }
+  }

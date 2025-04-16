@@ -55,3 +55,13 @@
     font-family: "Krona One", sans-serif;
     margin-bottom: 20px;
   }
+  @media (max-width: 600px) {
+    section,
+    .main-content {
+      padding: 20px 16px;
+    }
+  
+    h1, h2 {
+      font-size: 24px;
+    }
+  }
