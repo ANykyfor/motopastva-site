@@ -1,0 +1,39 @@
+.history-section {
+    margin: 60px 0;
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 0 10px #000;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .history-section__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .history-section__image {
+    width: 100%;
+    max-width: 720px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 153, 0, 0.4);
+    margin-bottom: 30px;
+  }
+  
+  .history-section__title {
+    font-size: 32px;
+    font-family: "Krona One", sans-serif;
+    color: #ffcc00;
+    margin-bottom: 20px;
+  }
+  
+  .history-section__paragraph {
+    font-size: 18px;
+    color: #eee;
+    line-height: 1.6;
+    max-width: 720px;
+  }

@@ -1,0 +1,32 @@
+section {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px #000;
+  }
+  
+  section h2,
+  .members-gallery__title,
+  .gallery-section__title,
+  .news-section__title,
+  .contacts-section__title,
+  .video-section__title,
+  .reviews-section__title {
+    font-size: 36px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 4px #000;
+    font-family: "Krona One", sans-serif;
+  }
+  
+  section p,
+  .welcome-section__text,
+  .contacts-section__info {
+    font-size: 18px;
+    color: #eee;
+    text-align: center;
+    line-height: 1.6;
+  }
+  

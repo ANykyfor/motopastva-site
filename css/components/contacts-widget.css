@@ -1,0 +1,40 @@
+.contacts-widget-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    border-radius: 16px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .contacts-widget-fixed__title {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #ffcc00;
+    font-family: "Krona One", sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .contacts-widget__item {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .contacts-widget__link {
+    color: #ff9900;
+    text-decoration: none;
+  }
+  
+  .contacts-widget__link:hover {
+    text-decoration: underline;
+  }
+  

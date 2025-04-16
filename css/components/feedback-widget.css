@@ -1,0 +1,61 @@
+.feedback-widget-fixed {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 16px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    padding: 20px;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .feedback-widget-fixed__title {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 12px;
+    text-align: center;
+    font-family: "Krona One", sans-serif;
+  }
+  
+  .feedback-widget-fixed__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .feedback-widget-fixed__input,
+  .feedback-widget-fixed__textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-family: inherit;
+  }
+  
+  .feedback-widget-fixed__textarea {
+    min-height: 60px;
+    resize: vertical;
+  }
+  
+  .feedback-widget-fixed__submit {
+    background-color: #ff9900;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .feedback-widget-fixed__submit:hover {
+    background-color: #ffcc00;
+    color: #111;
+  }

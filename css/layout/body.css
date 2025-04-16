@@ -1,0 +1,11 @@
+body {
+  background: url("../../img/engineharley.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+  
+  body.hero-background {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

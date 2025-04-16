@@ -3,6 +3,14 @@ function handleLogin(event) {
 
   const username = document.getElementById("login-user").value.trim();
 
+
+  const imgs = document.querySelectorAll('.members-gallery__img');
+carousel.addEventListener('scroll', () => {
+  imgs.forEach((img) => img.classList.remove('members-gallery__img--active'));
+  const center = Math.floor(imgs.length / 2);
+  imgs[center].classList.add('members-gallery__img--active');
+});
+
   if (!username) {
     alert("Введіть ім’я користувача");
     return false;
@@ -56,12 +64,28 @@ function openModal(imgElement) {
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
+function highlightCenterImage() {
+  const images = carousel.querySelectorAll('.members-gallery__img');
+  const center = Math.round(carousel.scrollLeft / 260); // приблизно
+  images.forEach((img, index) => {
+    img.classList.toggle('members-gallery__img--active', index === center);
+  });
+}
+
+carousel.addEventListener('scroll', () => {
+  setTimeout(highlightCenterImage, 100); // трішки затримка після прокрутки
+});
 <script>
-  const carousel = document.getElementById('membersCarousel');
-  document.querySelector('.members-gallery__arrow--left').addEventListener('click', () => {
+const leftArrow = document.querySelector('.members-gallery__arrow--left');
+const rightArrow = document.querySelector('.members-gallery__arrow--right');
+
+if (carousel && leftArrow && rightArrow) {
+  leftArrow.addEventListener('click', () => {
     carousel.scrollBy({ left: -260, behavior: 'smooth' });
   });
-  document.querySelector('.members-gallery__arrow--right').addEventListener('click', () => {
+
+  rightArrow.addEventListener('click', () => {
     carousel.scrollBy({ left: 260, behavior: 'smooth' });
   });
+}
 </script>

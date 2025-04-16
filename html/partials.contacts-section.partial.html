@@ -1,15 +1,24 @@
-<section class="contacts-section">
-  <h2 class="contacts-section__title">Контакти</h2>
+<section class="feedback-and-contacts">
+  <div class="feedback-form-block">
+    <h2 class="feedback-and-contacts__title">Зв'язатися з нами</h2>
+    <form class="feedback-section__form">
+      <input type="text" placeholder="Ваше ім'я" class="feedback-section__input" />
+      <input type="email" placeholder="Email" class="feedback-section__input" />
+      <textarea placeholder="Ваше повідомлення" class="feedback-section__textarea"></textarea>
+      <button type="submit" class="feedback-section__submit">Надіслати</button>
+    </form>
+  </div>
 
-  <div class="contacts-widget-fixed">
-    <h3 class="contacts-widget-fixed__title">Контакти</h3>
-    <p class="contacts-widget__item">📞 <a class="contacts-widget__link" href="tel:+380507490421">+38 (050) 749 04 21</a></p>
-    <p class="contacts-widget__item">✉️ <a class="contacts-widget__link" href="mailto:info@motopastva.ua">info@motopastva.ua</a></p>
-    <p class="contacts-widget__item">📍 Івано-Франківськ, вул. Київська 35</p>
+  <div class="contacts-section-block">
+    <h2 class="contacts-widget-fixed__title">Контакти</h2>
+    <p class="contacts-widget__item">
+      📞 <a href="tel:+380507490421" class="contacts-widget__link">+38 (050) 749 04 21</a>
+    </p>
+    <p class="contacts-widget__item">
+      ✉️ <a href="mailto:info@motopastva.ua" class="contacts-widget__link">info@motopastva.ua</a>
+    </p>
+    <p class="contacts-widget__item">
+      📍 Івано-Франківськ, вул. Київська 35
+    </p>
   </div>
 </section>
-<section
-  data-hx-trigger="load"
-  data-hx-get="../html/partials.contacts-widget.partial.html"
-  data-hx-swap="beforeend"
-></section>
