@@ -24,66 +24,56 @@
       </p>
     </header>
 
-    <main class="main-content">
-      <section
-        data-hx-trigger="load"
-        data-hx-get="../html/partials.welcome-section.partial.html"
-        data-hx-swap="outerHTML"
-      ></section>
-      <section
-        data-hx-trigger="load"
-        data-hx-get="../html/partials.members-gallery-section.partial.html"
-        data-hx-swap="outerHTML"
-      ></section>
-      <section
-        data-hx-trigger="load"
-        data-hx-get="../html/partials.gallery-section.partial.html"
-        data-hx-swap="outerHTML"
-      ></section>
 
-     
+<main class="main-content">
+  <section
+    data-hx-trigger="load"
+    data-hx-get="../html/partials.welcome-section.partial.html"
+    data-hx-swap="outerHTML"
+  ></section>
 
-      <section
+  <section
+    data-hx-trigger="load"
+    data-hx-get="../html/partials.members-gallery-section.partial.html"
+    data-hx-swap="outerHTML"
+  ></section>
+
+  <section
+    data-hx-trigger="load"
+    data-hx-get="../html/partials.gallery-section.partial.html"
+    data-hx-swap="outerHTML"
+  ></section>
+
+  <section
+    data-hx-trigger="load"
+    data-hx-get="partials.news-section.partial.html"
+    data-hx-swap="outerHTML"
+  ></section>
+
+  <section
+    data-hx-trigger="load"
+    data-hx-get="../html/partials.map-section.partial.html"
+    data-hx-swap="outerHTML"
+  ></section>
+
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      align-items: flex-start;
+    "
+  >
+    <section
       data-hx-trigger="load"
-      data-hx-get="partials.news-section.partial.html"
+      data-hx-get="../html/partials.contacts-section.partial.html"
       data-hx-swap="outerHTML"
     ></section>
-      
 
-      <section
-        data-hx-trigger="load"
-        data-hx-get="../html/partials.map-section.partial.html"
-        data-hx-swap="outerHTML"
-      ></section>
-
-      <section
-        data-hx-trigger="load"
-        data-hx-get="../html/partials.video-section.partial.html"
-        data-hx-swap="outerHTML"
-      ></section>
-
-      <div style="display: flex; justify-content: flex-end">
-        <section
-          data-hx-trigger="load"
-          data-hx-get="../html/partials.feedback-section.partial.html"
-          data-hx-swap="outerHTML"
-        ></section>
-      </div>
-      <div
-        data-hx-trigger="load"
-        data-hx-get="../html/partials.contacts-widget.partial.html"
-        data-hx-swap="afterend"
-      ></div>
-      <div class="contacts-widget-fixed">
-        <h3 class="contacts-widget-fixed__title">Контакти</h3>
-        <p class="contacts-widget__item">📞 <a class="contacts-widget__link" href="tel:+380507490421">+38 (050) 749 04 21</a></p>
-        <p class="contacts-widget__item">✉️ <a class="contacts-widget__link" href="mailto:info@motopastva.ua">info@motopastva.ua</a></p>
-        <p class="contacts-widget__item">📍 Івано-Франківськ, вул. Київська 35</p>
-      </div>
-    </main>
-
-    <footer class="main-footer">
-      <p>&copy; 2025 Motopastva UA. Усі права захищено.</p>
-    </footer>
-  </body>
-</html>
+    <section
+      data-hx-trigger="load"
+      data-hx-get="../html/partials.feedback-section.partial.html"
+      data-hx-swap="outerHTML"
+    ></section>
+  </div>
+</main>

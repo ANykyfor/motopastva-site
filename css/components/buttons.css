@@ -1,6 +1,6 @@
 button,
 input[type="submit"] {
-  background-color: #c17edc;
+  background-color: #a29ea3;
   color: #000;
   font-weight: bold;
   border: none;
@@ -18,17 +18,17 @@ input[type="submit"]:hover {
 .main__btn {
   font-size: 20px;
   padding: 12px 32px;
-  background-color: #ffd700;
+  background-color: #e0ddd0;
   color: #000;
   font-weight: 600;
   border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(255, 153, 0, 0.5), 0 0 10px rgba(255, 204, 0, 0.4);
+  box-shadow: 0 4px 14px rgba(255, 153, 0, 0.5), 0 0 10px rgba(229, 224, 201, 0.4);
   transition: 0.3s ease;
   margin-top: 20px;
   display: inline-block;
 }
 .main__btn:hover {
-  background-color: #ffcc00;
+  background-color: #e1dac0;
   color: #111;
   transform: scale(1.05);
 }
