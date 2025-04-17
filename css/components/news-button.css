@@ -11,7 +11,7 @@
   text-align: center;
   padding: 16px 24px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+  background: linear-gradient(135deg, #5d5454, #dcdcdc);
   color: #000;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -38,7 +38,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: silver;
+  background: rgb(135, 68, 68);
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 12px;
@@ -75,7 +75,7 @@
 
 .extra-button {
   flex: 1 1 calc(50% - 16px);
-  background-color: #ccc;
+  background-color: #816262;
   padding: 12px 24px;
   border-radius: 10px;
   font-weight: bold;
@@ -83,7 +83,7 @@
   font-family: "Krona One", sans-serif;
   text-align: center;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   animation: slideIn 0.5s forwards;
 }
 
